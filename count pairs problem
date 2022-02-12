@@ -1,0 +1,18 @@
+a=input()
+b=input()
+a_=a.split()
+N=a_[0]
+K=a_[1]
+list_n=b.split()
+output=[]
+for i in range(0,int(N)):
+    count=0
+    min_=int(list_n[i])-int(K)
+    max_=int(list_n[i])+int(K)
+    for j in range(0,int(N)):
+        if (int(list_n[j]) in range(min_,max_+1)):
+            count +=1
+    if(count>=2):
+        output.append(list_n[i])
+            
+print(len(output))
