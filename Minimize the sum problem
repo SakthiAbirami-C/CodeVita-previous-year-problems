@@ -1,0 +1,9 @@
+a,b=input().split()
+list_=list(map(int,input().split()))
+
+for i in range(0,int(b)):
+    max_dig=max(list_)
+    list_.remove(max_dig)
+    list_.append(max_dig//2)
+
+print(sum(list_))
