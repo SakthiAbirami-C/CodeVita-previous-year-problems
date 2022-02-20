@@ -1,0 +1,26 @@
+#getting 1st input(no: of elements in the upcoming input)
+N= int(input())
+#getting 2nd input elemnts of the list
+list_ip=list(map(int,input().split()))
+dict_={0:'zero',1:'one',2:'two',3:'three',4:'four',5:'five',6:'six',7:'seven',8:'eight',9:'nine'}
+list_in=[]
+count_list=[]
+count_pair=[]
+for i in list_ip:
+    list_in.append(dict_[i])
+
+for i in list_in:
+    count=0
+    for j in i:
+        if j in 'aeiou':
+           count+=1
+    count_list.append(count)
+
+count_sum=sum(count_list)
+
+for i in list_ip:
+    diff=count_sum-i
+    if diff in list_ip:
+        count_pair.append(diff)
+
+print(dict_[len(count_pair)//2])
